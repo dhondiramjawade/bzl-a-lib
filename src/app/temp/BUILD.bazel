@@ -1,0 +1,27 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@npm_angular_bazel//:index.bzl", "ng_module")
+load("@npm_bazel_typescript//:index.bzl", "ts_devserver", "ts_library")
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+load("@build_bazel_rules_nodejs//:defs.bzl", "npm_package")
+
+ng_module(
+    name = "temp",
+    # module_name = "temp",
+    srcs = glob(
+        include = ["*.ts","**/*.ts"],
+        exclude = [
+            "**/*.spec.ts",
+            "test.ts"
+        ],
+    ),
+    assets = glob([
+      "**/*.css",
+      "**/*.html",
+    ]) + ([]),
+    deps = [
+        "@npm//@angular/core",
+        "@npm//@angular/common"
+    ],
+    tsconfig = "//:tsconfig.json"
+)

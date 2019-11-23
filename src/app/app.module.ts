@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { Lib1Module } from 'lib1';
+import { Lib1Module } from "lib1";
 
 @NgModule({
   declarations: [
@@ -18,4 +18,5 @@ import { Lib1Module } from 'lib1';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

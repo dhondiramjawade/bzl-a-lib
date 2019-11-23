@@ -37,12 +37,13 @@ ng_module(
       "**/*.html",
     ]) + ([":styles"] if len(glob(["**/*.scss"])) else []),
     deps = [
+        "//projects/lib1/src:lib1",
+        "//src/app/temp:temp",
         "@npm//@angular/core",
         "@npm//@angular/platform-browser",
         "@npm//@angular/router",
         "@npm//@types",
-        "@npm//rxjs",
-        "//projects/lib1/src:lib1"
+        "@npm//rxjs"
     ],
 )
 

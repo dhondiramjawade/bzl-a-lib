@@ -14,7 +14,7 @@ workspace(
 )
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
+# This is necessary to bootstrap Bazel to run the package manager to download other rules from NPM.
 RULES_NODEJS_VERSION = "0.34.0"
 RULES_NODEJS_SHA256 = "7c4a690268be97c96f04d505224ec4cb1ae53c2c2b68be495c9bd2634296a5cd"
 http_archive(
@@ -52,6 +52,7 @@ Try running `yarn bazel` instead.
 # Setup the Node repositories. We need a NodeJS version that is more recent than v10.15.0
 # because "selenium-webdriver" which is required for "ng e2e" cannot be installed.
 # TODO: remove the custom repositories once "rules_nodejs" supports v10.16.0 by default.
+# This rule sets up node, npm, and yarn.
 node_repositories(
     node_repositories = {
         "10.16.0-darwin_amd64": ("node-v10.16.0-darwin-x64.tar.gz", "node-v10.16.0-darwin-x64", "6c009df1b724026d84ae9a838c5b382662e30f6c5563a0995532f2bece39fa9c"),
