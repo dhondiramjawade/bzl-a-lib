@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-lib1',
   template: `
     <p>
-      lib1 works!
+      HELLO lib1 works!
     </p>
   `,
   styles: []
